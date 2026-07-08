@@ -1,299 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OLA-DIAMOND | Bespoke Tailoring & Luxury Fashion</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: #1a1a1a;
-            color: #d4af37; /* Gold primary text */
-            line-height: 1.6;
+    <title>OLA-DIAMOND | Luxury Bespoke Tailoring</title>
+    <!-- Tailwind CSS for Modern UI Layouts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Social Media & Contact Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#f2e6b2',
+                            DEFAULT: '#d4af37',
+                            dark: '#aa8416',
+                        },
+                        darkBg: '#111317',
+                        cardBg: '#1a1d24',
+                    },
+                    fontFamily: {
+                        display: ['Cinzel', 'serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
         }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        /* Header / Hero Section */
-        header {
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAACfAQMAAABu/6YvAAAABlBMVEX///9BQUEvVvT+AAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAGlJREFUOI1jYGBg4GNgYGDgY9BjEGJQYBBiUGIQYpD/f/f/PwaGBgaGBjYGhgY2BsYGNgYmBvYP+v9wYGdgZ2BnYGdgZ2BnYGdgf/9f4H+Nf41/jX+Nf41/jX+Nf41/jX/9f/9f/9f/9f/9f/9f/6X5LwAAAP//AwC+U+8+vU+e/QAAAABJRU5ErkJggg=='); /* Use your background image data or a link */
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            padding: 0 20px;
-        }
-
-        header .logo-container {
-            margin-bottom: 20px;
-        }
-
-        header .logo-container img {
-            max-width: 150px; /* Adjust logo size */
-        }
-
-        header h1 {
-            font-size: 3em;
-            margin: 10px 0;
-            color: #d4af37;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        header h2 {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .cta-button {
-            background-color: #d4af37;
-            color: #1a1a1a;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #f2e6b2;
-        }
-
-        /* Features / Motto Section */
-        #about {
-            background-color: #262626;
-            padding: 50px 0;
-            text-align: center;
-        }
-
-        #about h3 {
-            color: #d4af37;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        #about p {
-            max-width: 800px;
-            margin: 0 auto;
-            color: #fff;
-            font-size: 1.1em;
-        }
-
-        /* Portfolio / Showroom Section */
-        #showroom {
-            padding: 50px 0;
-        }
-
-        #showroom h3 {
-            text-align: center;
-            color: #d4af37;
-            font-size: 2em;
-            margin-bottom: 40px;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            background-color: #262626;
-            border: 1px solid #444;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: center;
-            color: #fff;
-        }
-
-        .gallery-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        /* Contact Section */
-        #contact {
-            background-color: #262626;
-            padding: 50px 0;
-            text-align: center;
-        }
-
-        #contact h3 {
-            color: #d4af37;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #fff;
-        }
-
-        .contact-item {
-            border: 1px solid #444;
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        /* Footer Section */
-        footer {
-            background-color: #1a1a1a;
-            padding: 20px 0;
-            text-align: center;
-            color: #888;
-        }
-
-        footer .social-icons {
-            margin-bottom: 10px;
-        }
-
-        footer .social-icons a {
-            margin: 0 10px;
-            font-size: 1.5em;
-        }
-
-        /* Floating WhatsApp Icon */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-        }
-
-        .whatsapp-float:hover {
-            opacity: 0.8;
-        }
-
-        .my-float {
-            margin-top: 16px;
-        }
-    </style>
+    </script>
 </head>
-<body>
+<body class="bg-darkBg text-gray-300 font-body antialiased selection:bg-gold selection:text-darkBg">
 
-<!-- Header / Hero Section -->
-<header id="home">
-    <div class="logo-container">
-        <!-- Add your logo image here -->
-        <img src="your_logo.png" alt="OLA-DIAMOND Logo">
-    </div>
-    <h1>OLA-DIAMOND</h1>
-    <h2>Deals with all kinds of luxury tailoring materials,<br>
-    Bespoke wears, and high-fashion collections.</h2>
-    <a href="#showroom" class="cta-button">Explore Collection</a>
-</header>
+    <!-- Navbar Section -->
+    <nav class="sticky top-0 z-40 bg-darkBg/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-xl tracking-widest text-gold font-bold">OLA-DIAMOND</a>
+            <div class="hidden md:flex space-x-8 text-sm tracking-wider uppercase font-medium">
+                <a href="#about" class="hover:text-gold transition-colors">Our Motto</a>
+                <a href="#showroom" class="hover:text-gold transition-colors">Collections</a>
+                <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+            </div>
+            <a href="tel:+2347031325263" class="border border-gold text-gold hover:bg-gold hover:text-darkBg px-5 py-2 rounded text-xs tracking-widest uppercase font-semibold transition-all duration-300">
+                <i class="fa-solid fa-phone mr-2"></i>Call to Order
+            </a>
+        </div>
+    </nav>
 
-<!-- About / Motto Section -->
-<section id="about">
-    <div class="container">
-        <h3>OUR MOTTO</h3>
-        <p>Deals with all kinds of luxury tailoring materials, Bespoke wears, and high-fashion collections ranging from: ASO-EBI & TRADITIONAL WEARS, Dinner Gowns, Corporate suits, Ankara styles, and lots more. We redefine elegance.</p>
-    </div>
-</section>
+    <!-- Hero / Main Banner Section -->
+    <header class="relative min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-darkBg via-[#161a22] to-[#0d0f13] overflow-hidden px-6 py-16">
+        <!-- Abstract Luxury Lighting Background Effects -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
-<!-- Portfolio / Showroom Section -->
-<section id="showroom">
-    <div class="container">
-        <h3>OUR COLLECTION</h3>
-        <div class="gallery">
-            <!-- Add image URLs for each item -->
-            <div class="gallery-item">
-                <img src="showroom_item_1.png" alt="Bespoke Suit">
-                <p>Bespoke Suit</p>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <!-- Diamond & Branding Badge -->
+            <div class="inline-flex items-center justify-center p-4 bg-cardBg border border-gold/20 rounded-full shadow-2xl mb-8">
+                <i class="fa-solid fa-gem text-3xl text-gold animate-pulse"></i>
             </div>
-            <div class="gallery-item">
-                <img src="showroom_item_2.png" alt="Traditional Attire">
-                <p>Traditional Attire</p>
-            </div>
-            <div class="gallery-item">
-                <img src="showroom_item_3.png" alt="High-Fashion Dress">
-                <p>High-Fashion Dress</p>
-            </div>
-            <div class="gallery-item">
-                <img src="showroom_item_4.png" alt="Ankara Gown">
-                <p>Ankara Gown</p>
+            <h1 class="font-display text-4xl sm:text-6xl tracking-widest text-gold mb-6 drop-shadow-md">
+                OLA-DIAMOND
+            </h1>
+            <p class="text-gray-400 font-light tracking-wide text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Deals with all kinds of luxury tailoring materials, bespoke wears, and high-fashion collections. <span class="text-gold font-medium block mt-2">We redefine elegance.</span>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="tel:+2347031325263" class="w-full sm:w-auto bg-gold hover:bg-gold-light text-darkBg font-bold px-8 py-4 rounded shadow-lg shadow-gold/20 tracking-wider uppercase text-sm transition-all duration-300">
+                    <i class="fa-solid fa-phone-flip mr-2"></i>Call to Order
+                </a>
+                <a href="#showroom" class="w-full sm:w-auto bg-transparent border border-gray-600 hover:border-gold text-white px-8 py-4 rounded tracking-wider uppercase text-sm transition-all duration-300">
+                    View Collections
+                </a>
             </div>
         </div>
-    </div>
-</section>
+    </header>
 
-<!-- Contact Section -->
-<section id="contact">
-    <div class="container">
-        <h3>CONTACT US</h3>
-        <div class="contact-info">
-            <div class="contact-item">
-                <p><strong>ADDRESS</strong></p>
-                <p>2A salimi street, cele, oluwatedo estate, isashi, ojo LG, Lagos state, Nigeria.</p>
+    <!-- About / Motto Section -->
+    <section id="about" class="py-20 border-y border-gray-800 bg-[#14171d]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-display text-2xl tracking-widest text-gold mb-6 uppercase">Our Motto & Specialties</h2>
+            <div class="w-16 h-[2px] bg-gold mx-auto mb-8"></div>
+            <p class="text-gray-300 text-lg leading-relaxed font-light">
+                Deals with all kinds of luxury tailoring materials, Bespoke wears, and high-fashion collections ranging from: 
+                <span class="text-white font-semibold block my-4 tracking-wider text-xl">ASO-EBI & TRADITIONAL WEARS,<br>Dinner Gowns, Corporate suits, Ankara styles, and lots more.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Showroom Section -->
+    <section id="showroom" class="py-20 max-w-7xl mx-auto px-6">
+        <h2 class="font-display text-2xl tracking-widest text-gold text-center mb-12 uppercase">Featured Lookbook</h2>
+        
+        <!-- Grid Layout Using Premium Real-World Style Fashion Placeholders -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Item 1 -->
+            <div class="bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30 transition-all duration-300">
+                <div class="h-80 overflow-hidden bg-gray-900 relative">
+                    <img src="https://images.unsplash.com/photo-1593032465175-481da7e4725f?auto=format&fit=crop&q=80&w=600" alt="Corporate Suits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-white font-medium tracking-wide">Corporate Suits</h3>
+                    <p class="text-xs text-gold mt-1 uppercase tracking-widest">Bespoke Premium</p>
+                </div>
             </div>
-            <div class="contact-item">
-                <p><strong>PHONE</strong></p>
-                <p>+2347031325263</p>
+            <!-- Item 2 -->
+            <div class="bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30 transition-all duration-300">
+                <div class="h-80 overflow-hidden bg-gray-900 relative">
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&q=80&w=600" alt="Traditional Wears" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-white font-medium tracking-wide">Traditional Wears</h3>
+                    <p class="text-xs text-gold mt-1 uppercase tracking-widest">Aso-Ebi & Agbada</p>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30 transition-all duration-300">
+                <div class="h-80 overflow-hidden bg-gray-900 relative">
+                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=600" alt="Dinner Gowns" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-white font-medium tracking-wide">Dinner Gowns</h3>
+                    <p class="text-xs text-gold mt-1 uppercase tracking-widest">Luxury Collections</p>
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30 transition-all duration-300">
+                <div class="h-80 overflow-hidden bg-gray-900 relative">
+                    <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=600" alt="Tailoring Materials" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-white font-medium tracking-wide">Ankara Styles</h3>
+                    <p class="text-xs text-gold mt-1 uppercase tracking-widest">Custom Materials</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer Section -->
-<footer>
-    <div class="container">
-        <div class="social-icons">
-            <!-- Social media links from image -->
-            <a href="https://www.facebook.com/OlaDiamondFashionWorld" target="_blank">FB: Ola Diamond Fashion World</a>
-            <a href="https://www.tiktok.com/@oladiamond.fashion" target="_blank">TIKTOK: oladiamond.fashion</a>
+    <!-- Contact Info Section -->
+    <section id="contact" class="py-20 bg-[#14171d] border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="font-display text-2xl tracking-widest text-gold text-center mb-12 uppercase">Visit or Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Address Card -->
+                <div class="bg-cardBg p-8 rounded border border-gray-800 flex items-start space-x-4">
+                    <div class="p-3 bg-gold/10 rounded text-gold">
+                        <i class="fa-solid fa-location-dot text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold tracking-wide mb-2">Our Atelier</h3>
+                        <p class="text-gray-400 font-light leading-relaxed">
+                            2A salimi street, cele, oluwatedo estate, isashi, ojo LG, Lagos state, Nigeria.
+                        </p>
+                    </div>
+                </div>
+                <!-- Contact Card -->
+                <div class="bg-cardBg p-8 rounded border border-gray-800 flex items-start space-x-4">
+                    <div class="p-3 bg-gold/10 rounded text-gold">
+                        <i class="fa-solid fa-headset text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold tracking-wide mb-2">Quick Orders</h3>
+                        <p class="text-gray-400 font-light mb-4">Give us a call or text anytime to schedule your fittings.</p>
+                        <a href="tel:+2347031325263" class="text-gold font-bold text-lg tracking-wider hover:underline block">
+                            +234 703 132 5263
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p>&copy; 2023 OLA-DIAMOND. All Rights Reserved.</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-darkBg border-t border-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-xs text-gray-500 tracking-wider">&copy; 2026 OLA-DIAMOND. All Rights Reserved.</p>
+            
+            <!-- Social Channels Exactly from Image Grid -->
+            <div class="flex space-x-6 text-sm">
+                <a href="https://facebook.com" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-gold transition-colors">
+                    <i class="fa-brands fa-facebook"></i>
+                    <span>Ola Diamond Fashion World</span>
+                </a>
+                <a href="https://tiktok.com/@oladiamond.fashion" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-gold transition-colors">
+                    <i class="fa-brands fa-tiktok"></i>
+                    <span>oladiamond.fashion</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Floating Functional Elements -->
+
+    <!-- 1. Call To Order Mini Desktop Bar (Bottom Left) -->
+    <div class="fixed bottom-6 left-6 z-50 hidden sm:block">
+        <a href="tel:+2347031325263" class="flex items-center space-x-3 bg-gold text-darkBg px-5 py-3 rounded-full shadow-2xl font-bold tracking-wider text-xs uppercase hover:bg-gold-light transition-all duration-300">
+            <i class="fa-solid fa-phone-volume animate-bounce"></i>
+            <span>Call To Order</span>
+        </a>
     </div>
-</footer>
 
-<!-- Floating WhatsApp Icon -->
-<a href="https://wa.me/+2347031325263" class="whatsapp-float" target="_blank">
-    <i class="fa fa-whatsapp my-float">WS</i> 
-    <!-- WS text is a placeholder, use an actual icon library like Font Awesome for better appearance -->
-</a>
-
-<!-- Call to Order (Directly linked to phone number) -->
-<a href="tel:+2347031325263" style="display:none;">Call to Order</a>
-<script>
-    document.querySelector('.cta-button').addEventListener('click', function() {
-        // Find the 'Call to Order' link and trigger a click on it
-        var callToOrderLink = document.querySelector('a[href^="tel:"]');
-        if (callToOrderLink) {
-            callToOrderLink.click();
-        }
-    });
-</script>
+    <!-- 2. WhatsApp Floating Icon (Bottom Right) -->
+    <a href="https://wa.me/2347031325263?text=Hello%20Ola-Diamond%2C%20I%20would%20like%20to%20place%20an%20order%20for%20a%20bespoke%20wear." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25d366] text-white flex items-center justify-center rounded-full shadow-2xl text-2xl hover:scale-110 active:scale-95 transition-all duration-300 group"
+       title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp group-hover:rotate-12 transition-transform"></i>
+        <!-- Ripple Effect Notification Dot -->
+        <span class="absolute top-0 right-0 flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+        </span>
+    </a>
 
 </body>
-</html>
+                    </html>
+                    
