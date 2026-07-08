@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLA-DIAMOND | Bespoke Tailoring & Luxury Fashion</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #1a1a1a;
+            color: #d4af37; /* Gold primary text */
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAACfAQMAAABu/6YvAAAABlBMVEX///9BQUEvVvT+AAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAGlJREFUOI1jYGBg4GNgYGDgY9BjEGJQYBBiUGIQYpD/f/f/PwaGBgaGBjYGhgY2BsYGNgYmBvYP+v9wYGdgZ2BnYGdgZ2BnYGdgf/9f4H+Nf41/jX+Nf41/jX+Nf41/jX/9f/9f/9f/9f/9f/9f/6X5LwAAAP//AwC+U+8+vU+e/QAAAABJRU5ErkJggg=='); /* Use your background image data or a link */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        header .logo-container {
+            margin-bottom: 20px;
+        }
+
+        header .logo-container img {
+            max-width: 150px; /* Adjust logo size */
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 10px 0;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .cta-button {
+            background-color: #d4af37;
+            color: #1a1a1a;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #f2e6b2;
+        }
+
+        /* Features / Motto Section */
+        #about {
+            background-color: #262626;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #about h3 {
+            color: #d4af37;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #fff;
+            font-size: 1.1em;
+        }
+
+        /* Portfolio / Showroom Section */
+        #showroom {
+            padding: 50px 0;
+        }
+
+        #showroom h3 {
+            text-align: center;
+            color: #d4af37;
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background-color: #262626;
+            border: 1px solid #444;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #262626;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #contact h3 {
+            color: #d4af37;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .contact-item {
+            border: 1px solid #444;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            text-align: center;
+            color: #888;
+        }
+
+        footer .social-icons {
+            margin-bottom: 10px;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+
+        /* Floating WhatsApp Icon */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .whatsapp-float:hover {
+            opacity: 0.8;
+        }
+
+        .my-float {
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header / Hero Section -->
+<header id="home">
+    <div class="logo-container">
+        <!-- Add your logo image here -->
+        <img src="your_logo.png" alt="OLA-DIAMOND Logo">
+    </div>
+    <h1>OLA-DIAMOND</h1>
+    <h2>Deals with all kinds of luxury tailoring materials,<br>
+    Bespoke wears, and high-fashion collections.</h2>
+    <a href="#showroom" class="cta-button">Explore Collection</a>
+</header>
+
+<!-- About / Motto Section -->
+<section id="about">
+    <div class="container">
+        <h3>OUR MOTTO</h3>
+        <p>Deals with all kinds of luxury tailoring materials, Bespoke wears, and high-fashion collections ranging from: ASO-EBI & TRADITIONAL WEARS, Dinner Gowns, Corporate suits, Ankara styles, and lots more. We redefine elegance.</p>
+    </div>
+</section>
+
+<!-- Portfolio / Showroom Section -->
+<section id="showroom">
+    <div class="container">
+        <h3>OUR COLLECTION</h3>
+        <div class="gallery">
+            <!-- Add image URLs for each item -->
+            <div class="gallery-item">
+                <img src="showroom_item_1.png" alt="Bespoke Suit">
+                <p>Bespoke Suit</p>
+            </div>
+            <div class="gallery-item">
+                <img src="showroom_item_2.png" alt="Traditional Attire">
+                <p>Traditional Attire</p>
+            </div>
+            <div class="gallery-item">
+                <img src="showroom_item_3.png" alt="High-Fashion Dress">
+                <p>High-Fashion Dress</p>
+            </div>
+            <div class="gallery-item">
+                <img src="showroom_item_4.png" alt="Ankara Gown">
+                <p>Ankara Gown</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h3>CONTACT US</h3>
+        <div class="contact-info">
+            <div class="contact-item">
+                <p><strong>ADDRESS</strong></p>
+                <p>2A salimi street, cele, oluwatedo estate, isashi, ojo LG, Lagos state, Nigeria.</p>
+            </div>
+            <div class="contact-item">
+                <p><strong>PHONE</strong></p>
+                <p>+2347031325263</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <div class="social-icons">
+            <!-- Social media links from image -->
+            <a href="https://www.facebook.com/OlaDiamondFashionWorld" target="_blank">FB: Ola Diamond Fashion World</a>
+            <a href="https://www.tiktok.com/@oladiamond.fashion" target="_blank">TIKTOK: oladiamond.fashion</a>
+        </div>
+        <p>&copy; 2023 OLA-DIAMOND. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp Icon -->
+<a href="https://wa.me/+2347031325263" class="whatsapp-float" target="_blank">
+    <i class="fa fa-whatsapp my-float">WS</i> 
+    <!-- WS text is a placeholder, use an actual icon library like Font Awesome for better appearance -->
+</a>
+
+<!-- Call to Order (Directly linked to phone number) -->
+<a href="tel:+2347031325263" style="display:none;">Call to Order</a>
+<script>
+    document.querySelector('.cta-button').addEventListener('click', function() {
+        // Find the 'Call to Order' link and trigger a click on it
+        var callToOrderLink = document.querySelector('a[href^="tel:"]');
+        if (callToOrderLink) {
+            callToOrderLink.click();
+        }
+    });
+</script>
+
+</body>
+</html>
