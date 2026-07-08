@@ -23,8 +23,10 @@
                             DEFAULT: '#d4af37',
                             dark: '#aa8416',
                         },
-                        darkBg: '#111317',
-                        cardBg: '#1a1d24',
+                        // Custom background color to match the logo image background exactly
+                        darkBg: '#1b1e22', 
+                        darkerBg: '#121417',
+                        cardBg: '#22262c',
                     },
                     fontFamily: {
                         display: ['Cinzel', 'serif'],
@@ -38,7 +40,7 @@
 <body class="bg-darkBg text-gray-300 font-body antialiased selection:bg-gold selection:text-darkBg">
 
     <!-- Navbar Section -->
-    <nav class="sticky top-0 z-40 bg-darkBg/90 backdrop-blur-md border-b border-gray-800">
+    <nav class="sticky top-0 z-40 bg-darkBg/95 backdrop-blur-md border-b border-gray-800/60">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="font-display text-xl tracking-widest text-gold font-bold">OLA-DIAMOND</a>
             <div class="hidden md:flex space-x-8 text-sm tracking-wider uppercase font-medium">
@@ -52,21 +54,18 @@
         </div>
     </nav>
 
-    <!-- Hero / Main Banner Section -->
-    <header class="relative min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-darkBg via-[#161a22] to-[#0d0f13] overflow-hidden px-6 py-16">
-        <!-- Abstract Luxury Lighting Background Effects -->
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Hero Header Section with Image at the top -->
+    <header class="relative flex flex-col items-center justify-center bg-gradient-to-b from-darkBg to-darkerBg overflow-hidden border-b border-gray-800/30">
+        
+        <!-- THE LOGO IMAGE AT THE VERY TOP -->
+        <div class="w-full max-w-5xl mx-auto pt-8 px-4 flex justify-center">
+            <!-- Replace 'your-uploaded-logo-filename.jpg' with the actual filename or path of your image -->
+            <img src="your-uploaded-logo-filename.jpg" alt="OLA-DIAMOND FASHION WORLD Logo" class="w-full h-auto max-h-[480px] object-contain shadow-2xl rounded-b-xl">
+        </div>
 
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <!-- Diamond & Branding Badge -->
-            <div class="inline-flex items-center justify-center p-4 bg-cardBg border border-gold/20 rounded-full shadow-2xl mb-8">
-                <i class="fa-solid fa-gem text-3xl text-gold animate-pulse"></i>
-            </div>
-            <h1 class="font-display text-4xl sm:text-6xl tracking-widest text-gold mb-6 drop-shadow-md">
-                OLA-DIAMOND
-            </h1>
-            <p class="text-gray-400 font-light tracking-wide text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        <!-- Hero Context & Call To Actions right underneath -->
+        <div class="max-w-4xl mx-auto text-center relative z-10 px-6 pb-20 pt-8">
+            <p class="text-gray-400 font-light tracking-wide text-lg sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
                 Deals with all kinds of luxury tailoring materials, bespoke wears, and high-fashion collections. <span class="text-gold font-medium block mt-2">We redefine elegance.</span>
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -81,7 +80,7 @@
     </header>
 
     <!-- About / Motto Section -->
-    <section id="about" class="py-20 border-y border-gray-800 bg-[#14171d]">
+    <section id="about" class="py-20 bg-darkerBg border-b border-gray-800/40">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="font-display text-2xl tracking-widest text-gold mb-6 uppercase">Our Motto & Specialties</h2>
             <div class="w-16 h-[2px] bg-gold mx-auto mb-8"></div>
@@ -96,11 +95,10 @@
     <section id="showroom" class="py-20 max-w-7xl mx-auto px-6">
         <h2 class="font-display text-2xl tracking-widest text-gold text-center mb-12 uppercase">Featured Lookbook</h2>
         
-        <!-- Grid Layout Using Premium Real-World Style Fashion Placeholders -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Item 1 -->
             <div class="bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30 transition-all duration-300">
-                <div class="h-80 overflow-hidden bg-gray-900 relative">
+                <div class="h-80 overflow-hidden bg-gray-950 relative">
                     <img src="https://images.unsplash.com/photo-1593032465175-481da7e4725f?auto=format&fit=crop&q=80&w=600" alt="Corporate Suits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
                 </div>
                 <div class="p-5 text-center">
@@ -110,7 +108,7 @@
             </div>
             <!-- Item 2 -->
             <div class="bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30 transition-all duration-300">
-                <div class="h-80 overflow-hidden bg-gray-900 relative">
+                <div class="h-80 overflow-hidden bg-gray-950 relative">
                     <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&q=80&w=600" alt="Traditional Wears" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
                 </div>
                 <div class="p-5 text-center">
@@ -120,7 +118,7 @@
             </div>
             <!-- Item 3 -->
             <div class="bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30 transition-all duration-300">
-                <div class="h-80 overflow-hidden bg-gray-900 relative">
+                <div class="h-80 overflow-hidden bg-gray-950 relative">
                     <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=600" alt="Dinner Gowns" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
                 </div>
                 <div class="p-5 text-center">
@@ -130,8 +128,8 @@
             </div>
             <!-- Item 4 -->
             <div class="bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30 transition-all duration-300">
-                <div class="h-80 overflow-hidden bg-gray-900 relative">
-                    <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=600" alt="Tailoring Materials" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                <div class="h-80 overflow-hidden bg-gray-950 relative">
+                    <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=600" alt="Ankara Styles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
                 </div>
                 <div class="p-5 text-center">
                     <h3 class="text-white font-medium tracking-wide">Ankara Styles</h3>
@@ -142,7 +140,7 @@
     </section>
 
     <!-- Contact Info Section -->
-    <section id="contact" class="py-20 bg-[#14171d] border-t border-gray-800">
+    <section id="contact" class="py-20 bg-darkerBg border-t border-gray-800/40">
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="font-display text-2xl tracking-widest text-gold text-center mb-12 uppercase">Visit or Contact Us</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -180,11 +178,10 @@
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <p class="text-xs text-gray-500 tracking-wider">&copy; 2026 OLA-DIAMOND. All Rights Reserved.</p>
             
-            <!-- Social Channels Exactly from Image Grid -->
             <div class="flex space-x-6 text-sm">
                 <a href="https://facebook.com" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-gold transition-colors">
                     <i class="fa-brands fa-facebook"></i>
-                    <span>Ola Diamond Fashion World</span>
+                    <span>david.olakunle.98</span>
                 </a>
                 <a href="https://tiktok.com/@oladiamond.fashion" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-gold transition-colors">
                     <i class="fa-brands fa-tiktok"></i>
@@ -194,9 +191,9 @@
         </div>
     </footer>
 
-    <!-- Fixed Floating Functional Elements -->
+    <!-- Fixed Floating Elements -->
 
-    <!-- 1. Call To Order Mini Desktop Bar (Bottom Left) -->
+    <!-- Call To Order Mini Desktop Bar (Bottom Left) -->
     <div class="fixed bottom-6 left-6 z-50 hidden sm:block">
         <a href="tel:+2347031325263" class="flex items-center space-x-3 bg-gold text-darkBg px-5 py-3 rounded-full shadow-2xl font-bold tracking-wider text-xs uppercase hover:bg-gold-light transition-all duration-300">
             <i class="fa-solid fa-phone-volume animate-bounce"></i>
@@ -204,13 +201,12 @@
         </a>
     </div>
 
-    <!-- 2. WhatsApp Floating Icon (Bottom Right) -->
+    <!-- WhatsApp Floating Icon (Bottom Right) -->
     <a href="https://wa.me/2347031325263?text=Hello%20Ola-Diamond%2C%20I%20would%20like%20to%20place%20an%20order%20for%20a%20bespoke%20wear." 
        target="_blank" 
        class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25d366] text-white flex items-center justify-center rounded-full shadow-2xl text-2xl hover:scale-110 active:scale-95 transition-all duration-300 group"
        title="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp group-hover:rotate-12 transition-transform"></i>
-        <!-- Ripple Effect Notification Dot -->
         <span class="absolute top-0 right-0 flex h-3 w-3">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
@@ -218,5 +214,4 @@
     </a>
 
 </body>
-                    </html>
-                    
+</html>
