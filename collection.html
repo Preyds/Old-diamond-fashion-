@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections | OLA-DIAMOND Luxury Bespoke</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#f2e6b2',
+                            DEFAULT: '#d4af37',
+                            dark: '#aa8416',
+                        },
+                        darkBg: '#1b1e22', 
+                        darkerBg: '#121417',
+                        cardBg: '#22262c',
+                    },
+                    fontFamily: {
+                        display: ['Cinzel', 'serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth animation transition for filtering items */
+        .collection-item {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .collection-item.hidden-item {
+            opacity: 0;
+            transform: scale(0.9) translateY(10px);
+            position: absolute;
+            visibility: hidden;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-300 font-body antialiased selection:bg-gold selection:text-darkBg">
+
+    <!-- Navbar Section -->
+    <nav class="sticky top-0 z-40 bg-darkBg/95 backdrop-blur-md border-b border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-display text-xl tracking-widest text-gold font-bold">OLA-DIAMOND</a>
+            <div class="hidden md:flex space-x-8 text-sm tracking-wider uppercase font-medium">
+                <a href="index.html" class="hover:text-gold transition-colors">Home</a>
+                <a href="index.html#about" class="hover:text-gold transition-colors">Our Motto</a>
+                <a href="#gallery" class="text-gold tracking-wide">Collections</a>
+                <a href="index.html#contact" class="hover:text-gold transition-colors">Contact</a>
+            </div>
+            <a href="tel:+2347031325263" class="border border-gold text-gold hover:bg-gold hover:text-darkBg px-5 py-2 rounded text-xs tracking-widest uppercase font-semibold transition-all duration-300">
+                <i class="fa-solid fa-phone mr-2"></i>Call to Order
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="py-16 bg-gradient-to-b from-darkerBg to-darkBg text-center border-b border-gray-800/30">
+        <div class="max-w-3xl mx-auto px-6">
+            <span class="text-gold uppercase tracking-widest text-xs font-semibold">Exquisite Craftsmanship</span>
+            <h1 class="font-display text-4xl sm:text-5xl tracking-widest text-white mt-3 mb-4 uppercase">The Lookbook</h1>
+            <div class="w-16 h-[2px] bg-gold mx-auto mb-6"></div>
+            <p class="text-gray-400 font-light max-w-xl mx-auto text-sm sm:text-base">
+                Explore our curated catalogue of premium male attire. Filter through styles to find inspiration for your next bespoke fit.
+            </p>
+        </div>
+    </header>
+
+    <!-- Filter & Showroom Section -->
+    <main id="gallery" class="py-12 max-w-7xl mx-auto px-6 min-h-screen">
+        
+        <!-- Filter Bar -->
+        <div class="flex flex-wrap justify-center items-center gap-2 mb-12 border-b border-gray-800/40 pb-6">
+            <button onclick="filterSelection('all')" class="filter-btn active bg-gold text-darkBg font-semibold px-5 py-2 rounded text-xs uppercase tracking-wider transition-all duration-300">
+                All Outfits
+            </button>
+            <button onclick="filterSelection('traditional')" class="filter-btn border border-gray-800 hover:border-gold/50 text-gray-400 hover:text-gold px-5 py-2 rounded text-xs uppercase tracking-wider transition-all duration-300">
+                Aso-Ebi & Agbada
+            </button>
+            <button onclick="filterSelection('senator')" class="filter-btn border border-gray-800 hover:border-gold/50 text-gray-400 hover:text-gold px-5 py-2 rounded text-xs uppercase tracking-wider transition-all duration-300">
+                Senator Wears
+            </button>
+            <button onclick="filterSelection('suits')" class="filter-btn border border-gray-800 hover:border-gold/50 text-gray-400 hover:text-gold px-5 py-2 rounded text-xs uppercase tracking-wider transition-all duration-300">
+                Corporate Suits
+            </button>
+            <button onclick="filterSelection('casual')" class="filter-btn border border-gray-800 hover:border-gold/50 text-gray-400 hover:text-gold px-5 py-2 rounded text-xs uppercase tracking-wider transition-all duration-300">
+                Ankara & Casuals
+            </button>
+        </div>
+
+        <!-- Collections Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 transition-all duration-500">
+            
+            <!-- Traditional Item 1 -->
+            <div class="collection-item traditional bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30">
+                <div class="h-96 overflow-hidden bg-gray-950 relative">
+                    <img src="Agbada.jpg" alt="Luxury Agbada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-white font-medium tracking-wide">Classic Agbada Style</h3>
+                    <p class="text-xs text-gold mt-1 uppercase tracking-widest">Traditional Wear</p>
+                </div>
+            </div>
+
+            <!-- Senator Item 1 -->
+            <div class="collection-item senator bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30">
+                <div class="h-96 overflow-hidden bg-gray-950 relative">
+                    <img src="senate5.jpg" alt="Premium Senate Wear" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-white font-medium tracking-wide">Signature Senator Wear</h3>
+                    <p class="text-xs text-gold mt-1 uppercase tracking-widest">Senator Design</p>
+                </div>
+            </div>
+
+            <!-- Suits Item 1 -->
+            <div class="collection-item suits bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30">
+                <div class="h-96 overflow-hidden bg-gray-950 relative">
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&q=80&w=600" alt="Bespoke Suit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-white font-medium tracking-wide">Bespoke Executive Suit</h3>
+                    <p class="text-xs text-gold mt-1 uppercase tracking-widest">Corporate Luxury</p>
+                </div>
+            </div>
+
+            <!-- Casual Item 1 (Lace) -->
+            <div class="collection-item casual bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30">
+                <div class="h-96 overflow-hidden bg-gray-950 relative">
+                    <img src="lace1.jpg" alt="Lace Outfit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-white font-medium tracking-wide">Premium Lace Standard</h3>
+                    <p class="text-xs text-gold mt-1 uppercase tracking-widest">Ankara & Casuals</p>
+                </div>
+            </div>
+
+            <!-- Traditional Item 2 -->
+            <div class="collection-item traditional bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30">
+                <div class="h-96 overflow-hidden bg-gray-950 relative">
+                    <!-- Replace with real image later -->
+                    <div class="w-full h-full flex flex-col items-center justify-center bg-gray-900 border-b border-gray-800 text-gray-600">
+                        <i class="fa-solid fa-shirt text-4xl mb-2"></i><span>Traditional Fit 2</span>
+                    </div>
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-white font-medium tracking-wide">Luxury Aso-Ebi Set</h3>
+                    <p class="text-xs text-gold mt-1 uppercase tracking-widest">Traditional Wear</p>
+                </div>
+            </div>
+
+            <!-- Senator Item 2 -->
+            <div class="collection-item senator bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30">
+                <div class="h-96 overflow-hidden bg-gray-950 relative">
+                    <div class="w-full h-full flex flex-col items-center justify-center bg-gray-900 border-b border-gray-800 text-gray-600">
+                        <i class="fa-solid fa-shirt text-4xl mb-2"></i><span>Senator Fit 2</span>
+                    </div>
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-white font-medium tracking-wide">South South Attire</h3>
+                    <p class="text-xs text-gold mt-1 uppercase tracking-widest">Senator Design</p>
+                </div>
+            </div>
+
+            <!-- Casual Item 2 -->
+            <div class="collection-item casual bg-cardBg border border-gray-800 rounded overflow-hidden group hover:border-gold/30">
+                <div class="h-96 overflow-hidden bg-gray-950 relative">
+                    <div class="w-full h-full flex flex-col items-center justify-center bg-gray-900 border-b border-gray-800 text-gray-600">
+                        <i class="fa-solid fa-shirt text-4xl mb-2"></i><span>Casual Fit 2</span>
+                    </div>
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-white font-medium tracking-wide">Palazzo & Casual Match</h3>
+                    <p class="text-xs text-gold mt-1 uppercase tracking-widest">Ankara & Casuals</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-darkBg border-t border-gray-900 py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-xs text-gray-500 tracking-wider">&copy; 2026 OLA-DIAMOND. All Rights Reserved.</p>
+            
+            <div class="flex space-x-6 text-sm">
+                <a href="https://facebook.com" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-gold transition-colors">
+                    <i class="fa-brands fa-facebook"></i>
+                    <span>david.olakunle.98</span>
+                </a>
+                <a href="https://tiktok.com/@oladiamond.fashion" target="_blank" class="flex items-center space-x-2 text-gray-400 hover:text-gold transition-colors">
+                    <i class="fa-brands fa-tiktok"></i>
+                    <span>oladiamond.fashion</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/2347031325263?text=Hello%20Ola-Diamond%2C%20I%20saw%20a%20style%20in%20your%20lookbook%20and%20want%20to%20order." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25d366] text-white flex items-center justify-center rounded-full shadow-2xl text-2xl hover:scale-110 active:scale-95 transition-all duration-300"
+       title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Interactive Filter Script -->
+    <script>
+        function filterSelection(category) {
+            const items = document.getElementsByClassName("collection-item");
+            const buttons = document.getElementsByClassName("filter-btn");
+            
+            // Adjust Active Button Styles
+            for (let btn of buttons) {
+                if (btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.add("bg-gold", "text-darkBg", "font-semibold");
+                    btn.classList.remove("border-gray-800", "text-gray-400");
+                } else {
+                    btn.classList.remove("bg-gold", "text-darkBg", "font-semibold");
+                    btn.classList.add("border-gray-800", "text-gray-400");
+                }
+            }
+
+            // Filter Grid Items
+            for (let item of items) {
+                if (category === "all" || item.classList.contains(category)) {
+                    item.classList.remove("hidden-item");
+                } else {
+                    item.classList.add("hidden-item");
+                }
+            }
+        }
+    </script>
+
+</body>
+  </html>
+  
